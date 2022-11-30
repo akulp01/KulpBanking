@@ -1,12 +1,20 @@
-function passwordCheck(pass1, pass2) {
+//match the two passwords
+var check = function () {
 
-    if (pass1.length < 5 || pass2.length < 5)
-        return "Password must be greater than 5 characters";
+    var password = document.getElementById('password').value;
+    var password2 = document.getElementById('confirm_password').value;
+
+    if (password.length < 5 || password2.length < 5)
+        document.getElementById('message').innerHTML = 'Password needs to be 5 chars minimum' + '</br>';
+
     else {
-        if (pass1 == pass2) {
-            return "matching"
+        if (document.getElementById('password').value ==
+            document.getElementById('confirm_password').value) {
+            document.getElementById('message').style.color = 'green';
+            document.getElementById('message').innerHTML = 'matching' + '</br>';
         } else {
-            return "not matching"
+            document.getElementById('message').style.color = 'red';
+            document.getElementById('message').innerHTML = 'not matching' + '</br>';
         }
     }
 }
